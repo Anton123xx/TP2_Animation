@@ -507,6 +507,7 @@ GameObject:
   - component: {fileID: 1185154414786850545}
   - component: {fileID: 7481500320873327209}
   - component: {fileID: 3480025354906047681}
+  - component: {fileID: 6062467097583910614}
   m_Layer: 0
   m_Name: Object_43
   m_TagString: Untagged
@@ -579,6 +580,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6062467097583910614
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164690549338416706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.023852, y: 0, z: 15.004748}
+  m_Center: {x: 5.7170606, y: 0, z: -0.11379431}
 --- !u!1 &1165649030235426380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,10 +1031,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 664733451575117195}
-  - component: {fileID: 6401785956810177933}
   - component: {fileID: 2225113068205536961}
   - component: {fileID: 4213680059514785831}
-  m_Layer: 8
+  - component: {fileID: 71417473478875244}
+  m_Layer: 3
   m_Name: CALLING_BUTTONS
   m_TagString: Elevator_open
   m_Icon: {fileID: 0}
@@ -1036,30 +1058,6 @@ Transform:
   - {fileID: 2531836217131419587}
   m_Father: {fileID: 1994745435072616940}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6401785956810177933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2784270664595297658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45f0d6091206b5143a30ffacd72bc1cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 7060127437168332687}
-  aS: {fileID: 4213680059514785831}
-  doorOpen: {fileID: 8300000, guid: 269e97bc790625b4188e8738ce99fe63, type: 3}
-  doorClose: {fileID: 8300000, guid: c6adb1d8781eec6419485f1027c5c183, type: 3}
-  moving: {fileID: 8300000, guid: c9f68c3ee908f894eabcb5c318bd58aa, type: 3}
-  elevatorMap:
-  - {fileID: 3712791988989498634}
-  - {fileID: 0}
-  - {fileID: 0}
-  level: 1
-  player: {fileID: 0}
-  playerPosition: {fileID: 0}
 --- !u!65 &2225113068205536961
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1177,6 +1175,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &71417473478875244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2784270664595297658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb113b18262de846b19c988b12c9d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7060127437168332687}
+  aS: {fileID: 4213680059514785831}
+  doorOpen: {fileID: 8300000, guid: e5f581ce4c31f1849a1622e74d7921d8, type: 3}
+  doorClose: {fileID: 8300000, guid: 14ae8885ec0e7fa41aa41f245f48be6a, type: 3}
+  moving: {fileID: 8300000, guid: 62d1e95c2bfeb2344a5863b4e33f79c3, type: 3}
+  elevatorMap: []
+  level: 1
+  player: {fileID: 0}
+  playerPosition: {fileID: 0}
 --- !u!1 &2914525071698178481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,7 +1543,7 @@ Animator:
   m_GameObject: {fileID: 3712791988989498634}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 52bca26839e572148b40bc298f10b8d5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9d4da170440c6eb4abe39ea5b7b9d41a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2160,9 +2179,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7439479777050197124}
   - component: {fileID: 7595428365794156033}
-  - component: {fileID: 2992161624224051660}
   - component: {fileID: 5234012777030880224}
-  m_Layer: 8
+  - component: {fileID: 6711530172866792615}
+  m_Layer: 3
   m_Name: UP
   m_TagString: Button_Up
   m_Icon: {fileID: 0}
@@ -2205,30 +2224,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.15309696, y: 0.1564173, z: 0.08070086}
   m_Center: {x: 0.026695624, y: 0.06055329, z: 0.12338008}
---- !u!114 &2992161624224051660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5807714919078050110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45f0d6091206b5143a30ffacd72bc1cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 7060127437168332687}
-  aS: {fileID: 5234012777030880224}
-  doorOpen: {fileID: 8300000, guid: 269e97bc790625b4188e8738ce99fe63, type: 3}
-  doorClose: {fileID: 8300000, guid: c6adb1d8781eec6419485f1027c5c183, type: 3}
-  moving: {fileID: 8300000, guid: c9f68c3ee908f894eabcb5c318bd58aa, type: 3}
-  elevatorMap:
-  - {fileID: 3712791988989498634}
-  - {fileID: 0}
-  - {fileID: 0}
-  level: 1
-  player: {fileID: 0}
-  playerPosition: {fileID: 0}
 --- !u!82 &5234012777030880224
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2325,6 +2320,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6711530172866792615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807714919078050110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb113b18262de846b19c988b12c9d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7060127437168332687}
+  aS: {fileID: 4213680059514785831}
+  doorOpen: {fileID: 8300000, guid: e5f581ce4c31f1849a1622e74d7921d8, type: 3}
+  doorClose: {fileID: 8300000, guid: 14ae8885ec0e7fa41aa41f245f48be6a, type: 3}
+  moving: {fileID: 8300000, guid: 62d1e95c2bfeb2344a5863b4e33f79c3, type: 3}
+  elevatorMap: []
+  level: 1
+  player: {fileID: 0}
+  playerPosition: {fileID: 0}
 --- !u!1 &5883074478429938875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,8 +2383,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1375246932985136453}
   - component: {fileID: 3281283015881799714}
-  - component: {fileID: 2620632571949031123}
-  m_Layer: 8
+  - component: {fileID: 7999978681538840573}
+  m_Layer: 3
   m_Name: DOWN
   m_TagString: Button_Down
   m_Icon: {fileID: 0}
@@ -2411,7 +2427,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.15325885, y: 0.13053736, z: 0.03633496}
   m_Center: {x: -0.03265507, y: 0.010072008, z: 0.11861253}
---- !u!114 &2620632571949031123
+--- !u!114 &7999978681538840573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2420,18 +2436,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6849032984977149258}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45f0d6091206b5143a30ffacd72bc1cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cb113b18262de846b19c988b12c9d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7060127437168332687}
-  aS: {fileID: 5234012777030880224}
-  doorOpen: {fileID: 8300000, guid: 269e97bc790625b4188e8738ce99fe63, type: 3}
-  doorClose: {fileID: 8300000, guid: c6adb1d8781eec6419485f1027c5c183, type: 3}
-  moving: {fileID: 8300000, guid: c9f68c3ee908f894eabcb5c318bd58aa, type: 3}
-  elevatorMap:
-  - {fileID: 3712791988989498634}
-  - {fileID: 0}
-  - {fileID: 0}
+  aS: {fileID: 4213680059514785831}
+  doorOpen: {fileID: 8300000, guid: e5f581ce4c31f1849a1622e74d7921d8, type: 3}
+  doorClose: {fileID: 8300000, guid: 14ae8885ec0e7fa41aa41f245f48be6a, type: 3}
+  moving: {fileID: 8300000, guid: 62d1e95c2bfeb2344a5863b4e33f79c3, type: 3}
+  elevatorMap: []
   level: 1
   player: {fileID: 0}
   playerPosition: {fileID: 0}
@@ -3453,7 +3466,7 @@ GameObject:
   - component: {fileID: 2531836217131419587}
   - component: {fileID: 4828767516084147298}
   - component: {fileID: 7471421504295151916}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Object_35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3702,7 +3715,7 @@ GameObject:
   - component: {fileID: 1646021950877496683}
   - component: {fileID: 1235462799261299176}
   - component: {fileID: 7751776445472297135}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Object_34
   m_TagString: Untagged
   m_Icon: {fileID: 0}

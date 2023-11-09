@@ -9,11 +9,13 @@ TagManager:
   - Button_Up
   - Button_Down
   - PLAYER
+  - E1
+  - E2
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interact
   - Water
   - UI
   - 
