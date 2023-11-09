@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - E0
+  - Elevator_open
+  - Button_Up
+  - Button_Down
+  - PLAYER
   layers:
   - Default
   - TransparentFX
