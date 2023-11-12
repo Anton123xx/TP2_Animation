@@ -11,6 +11,9 @@ TagManager:
   - PLAYER
   - E1
   - E2
+  - NPC1
+  - JUMPSPOT
+  - LANDSPOT
   layers:
   - Default
   - TransparentFX
