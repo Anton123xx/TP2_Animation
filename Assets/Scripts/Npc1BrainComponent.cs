@@ -72,7 +72,7 @@ public class Npc1BrainComponent : MonoBehaviour
     }
     private void CheckRange()
     {
-        if ((playerPosition.position - agent.transform.position).magnitude <= .8)
+        if ((playerPosition.position - agent.transform.position).magnitude <= 2)
         {
             Attack();
         }
