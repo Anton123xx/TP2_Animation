@@ -20,7 +20,7 @@ public class ElevatorControllerComponent : MonoBehaviour
 
     [SerializeField] GameObject[] elevatorMap;
 
-    public int level = 1;
+    //public int level = 1;
     //public int numberOfLevels = 2;
 
     [SerializeField] GameObject player;
@@ -43,7 +43,7 @@ public class ElevatorControllerComponent : MonoBehaviour
         elevatorMap[1] = GameObject.FindGameObjectWithTag("E1");
         elevatorMap[2] = GameObject.FindGameObjectWithTag("E2");
 
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("PLAYER");
         playerPosition = player.transform;
 
 
@@ -81,12 +81,12 @@ public class ElevatorControllerComponent : MonoBehaviour
     }
 
 
-    public void GoUp()
+    public void GoUp(int level)
     {
 
         //Debug.Log("UP");
 
-        level++;
+        //level++;
         aS.PlayOneShot(moving);
         player.SetActive(false);
         playerPosition.position = new Vector3(playerPosition.position.x, elevatorMap[level].transform.position.y, playerPosition.position.z);
@@ -97,13 +97,13 @@ public class ElevatorControllerComponent : MonoBehaviour
     }
 
 
-    public void GoDown()
+    public void GoDown(int level)
     {
 
 
         //Debug.Log("DOWN");
 
-        level--;
+        //level--;
         aS.PlayOneShot(moving);
         player.SetActive(false);
         playerPosition.position = new Vector3(playerPosition.position.x, elevatorMap[level].transform.position.y, playerPosition.position.z);

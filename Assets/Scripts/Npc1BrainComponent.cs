@@ -27,16 +27,30 @@ public class Npc1BrainComponent : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody rb;
     [SerializeField] NavMeshAgent agent;
+
+    [SerializeField] GameObject player;
     [SerializeField] Transform playerPosition;
-    //[SerializeField] HealthComponent playerHealth;
+    [SerializeField] PlayerHealthComponent playerHealth;
+
+
+
+
+
+    private void Awake()
+    {
+        playerHealth = player.GetComponent<PlayerHealthComponent>();
+    }
+
+
+
+
+
+
     private void Start()
     {
-        //orientationBODYPLAYER = GameObject.Find("PLAYER").GetComponent<Transform>();
-        //rb = orientationBODYPLAYER.GetComponent<Rigidbody>();
-        //rb.freezeRotation = true;
+      
         inAir = true;
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+  
     }
 
 
@@ -89,7 +103,8 @@ public class Npc1BrainComponent : MonoBehaviour
     private void Attack()
     {
         animator.SetBool("INRANGE", true);
-        //playerHealth.hit();
+        
+        playerHealth.Hit();
     }
 
 

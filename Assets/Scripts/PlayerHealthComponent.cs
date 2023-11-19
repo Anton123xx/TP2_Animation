@@ -1,27 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class HealthComponent : MonoBehaviour
+public class PlayerHealthComponent : MonoBehaviour
 {
-    [SerializeField] int health;
-    [SerializeField] int dmgPerHit;
-
+    [SerializeField] int health = 100;
+    [SerializeField] int dmgPerHit = 100;
 
     private void Awake()
     {
-        health = 100;
+        
     }
-
 
     private void Update()
     {
         if(health <= 0)
         {
-            Debug.Log("DEAD");
+            Debug.Log("GAMEOVER");
         }
     }
-        
 
     public void Hit()
     {

@@ -21,9 +21,12 @@ public class PlayerInteractComponent : MonoBehaviour
     //[SerializeField] private Image crosshair = null;
 
 
+    private int level;
 
-
-
+    private void Awake()
+    {
+        level = 1;
+    }
 
 
     // Update is called once per frame
@@ -67,14 +70,15 @@ public class PlayerInteractComponent : MonoBehaviour
                         ElevatorControllerComponent elevatorController =
                             hit.collider.GetComponent<ElevatorControllerComponent>();
 
-                        if (elevatorController.level == 2)
+                        if (level == 2)
                         {
                             //peux pas aller plus haut
                             Debug.Log("PEUXPASALLERPLUSHAUT");
                         }
                         else
                         {
-                            elevatorController.GoUp();
+                            level++;
+                            elevatorController.GoUp(level);
                         }
 
 
@@ -90,7 +94,7 @@ public class PlayerInteractComponent : MonoBehaviour
                     {
                         ElevatorControllerComponent elevatorController =
                             hit.collider.GetComponent<ElevatorControllerComponent>();
-                        if (elevatorController.level == 0)
+                        if (level == 0)
                         {
 
                             //peux pas aller plus bas
@@ -99,7 +103,8 @@ public class PlayerInteractComponent : MonoBehaviour
                         }
                         else
                         {
-                            elevatorController.GoDown();
+                            level--;
+                            elevatorController.GoDown(level);
                         }
 
 

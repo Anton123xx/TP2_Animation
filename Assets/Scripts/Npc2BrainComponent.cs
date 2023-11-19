@@ -30,8 +30,7 @@ public class Npc2BrainComponent : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody rb;
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] Transform playerPosition;
-    //[SerializeField] HealthComponent playerHealth;
+
 
     [SerializeField] GameObject[] nodes;
     [SerializeField] GameObject eyes;
@@ -41,6 +40,23 @@ public class Npc2BrainComponent : MonoBehaviour
     int index = 0;
     float guardTime = 3f;
     bool guard = false;
+
+
+    [SerializeField] GameObject player;
+    [SerializeField] Transform playerPosition;
+    [SerializeField] PlayerHealthComponent playerHealth;
+
+
+
+
+
+    private void Awake()
+    {
+        playerHealth = player.GetComponent<PlayerHealthComponent>();
+    }
+
+
+
     private void Start()
     {
 
@@ -102,7 +118,7 @@ public class Npc2BrainComponent : MonoBehaviour
     }
     private void CheckRange()
     {
-        if ((playerPosition.position - agent.transform.position).magnitude <= 2)
+        if ((playerPosition.position - agent.transform.position).magnitude <= 1)
         {
             Attack();
         }
@@ -115,7 +131,8 @@ public class Npc2BrainComponent : MonoBehaviour
     private void Attack()
     {
         animator.SetBool("INRANGE", true);
-        //playerHealth.hit();
+        animator.SetTrigger("ATTACK");
+        playerHealth.Hit();
     }
 
     private bool CanSeePlayer()
@@ -126,15 +143,15 @@ public class Npc2BrainComponent : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, layerMask))
         {
             //Debug.Log(hit.collider.tag);
-            return hit.collider.CompareTag("Player");
+            return hit.collider.CompareTag("PLAYER");
         }
 
         return false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        switch (collision.collider.tag)
+        switch (collider.tag)
         {
             case "N0":
                 guard = true;
