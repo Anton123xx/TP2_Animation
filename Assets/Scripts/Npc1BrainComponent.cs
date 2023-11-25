@@ -65,10 +65,10 @@ public class Npc1BrainComponent : MonoBehaviour
             Follow();
         }
 
-        if (animator.GetBool("IDLE"))
-        {
+        //if (animator.GetBool("IDLE"))
+        //{
            
-        }
+        //}
 
         if(agent.isOnOffMeshLink && inAir)
         {
@@ -88,7 +88,8 @@ public class Npc1BrainComponent : MonoBehaviour
     {
         if ((playerPosition.position - agent.transform.position).magnitude <= 2)
         {
-            Attack();
+            //Attack();
+            animator.SetBool("INRANGE", true);
         }
         else
         {
@@ -100,9 +101,9 @@ public class Npc1BrainComponent : MonoBehaviour
         agent.SetDestination(playerPosition.position);
 
     }
-    private void Attack()
+    public void Attack()
     {
-        animator.SetBool("INRANGE", true);
+        
         
         playerHealth.Hit();
     }

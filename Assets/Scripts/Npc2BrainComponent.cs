@@ -120,7 +120,9 @@ public class Npc2BrainComponent : MonoBehaviour
     {
         if ((playerPosition.position - agent.transform.position).magnitude <= 1)
         {
-            Attack();
+            //Attack();
+            animator.SetBool("INRANGE", true);
+            animator.SetTrigger("ATTACK");
         }
         else
         {
@@ -128,10 +130,9 @@ public class Npc2BrainComponent : MonoBehaviour
         }
     }
 
-    private void Attack()
+    public void Attack()
     {
-        animator.SetBool("INRANGE", true);
-        animator.SetTrigger("ATTACK");
+       
         playerHealth.Hit();
     }
 
